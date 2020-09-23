@@ -82,7 +82,12 @@ toggleMenu();
 
 const feedback = () => {
   const feedbackPhone = document.querySelectorAll("[name='phone']"),
-    formAll = document.querySelectorAll("form");
+    formAll = document.querySelectorAll("form"),
+    linkPrivacy = document.querySelectorAll(".link-privacy"),
+    popupPrivacy = document.querySelector(".popup-privacy"),
+    close = popupPrivacy.querySelector('.close');
+
+
 
   feedbackPhone.forEach((e) => {
     maskPhone(e);
@@ -97,6 +102,18 @@ const feedback = () => {
       body: JSON.stringify(body),
     });
   };
+
+
+// Открытие окна политики конфиденц...
+  linkPrivacy.forEach((item) => {
+    item.addEventListener('click', ()=>{
+      popupPrivacy.style.visibility = 'visible';
+    })
+  });
+
+  close.addEventListener('click', () =>{
+    popupPrivacy.style.visibility = "hidden";
+  })
 
 
   formAll.forEach((item) => {
