@@ -5729,7 +5729,8 @@ div.wave-block:nth-child(17):after {
         width: 11px;
         height: 5px; }
   .checkbox input[type="checkbox"] {
-    visibility: hidden; }
+    opacity: 0;
+     }
   .checkbox input[type="checkbox"]:checked + label:after {
     opacity: 1; }
   .checkbox__descr {
