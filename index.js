@@ -52,10 +52,12 @@ const toggleMenu = () => {
     if (target === menuIcon) {
       popupDialogMenu.style.transform = "translate3d(0,0,0)";
     }
+
 // закрытие меню при клике на ссылки в меню
     if (
       target.closest(".popup-menu-nav__item") ||
-      target.closest(".link-list-menu")
+      target.closest(".link-list-menu") ||
+      target.closest(".button-footer")
     ) {
       e.preventDefault();
       popupDialogMenu.style.transform = "translate3d(645px,0,0)";
