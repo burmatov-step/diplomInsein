@@ -13,7 +13,6 @@ const toggleMenu = () => {
     blockSections = document.querySelectorAll(".block-sections"),
     popupRepairTypes = document.querySelector(".popup-repair-types");
 
-
   // Добавление номера
   const addNumber = () => {
     headPhoneNumAccordLink.style.opacity = "1";
@@ -53,7 +52,7 @@ const toggleMenu = () => {
       popupDialogMenu.style.transform = "translate3d(0,0,0)";
     }
 
-// закрытие меню при клике на ссылки в меню
+    // закрытие меню при клике на ссылки в меню
     if (
       target.closest(".popup-menu-nav__item") ||
       target.closest(".link-list-menu") ||
@@ -62,21 +61,29 @@ const toggleMenu = () => {
       e.preventDefault();
       popupDialogMenu.style.transform = "translate3d(645px,0,0)";
     }
-// плавный скролл
-    blockSections.forEach((item) =>{
-      if(`#${item.id}` === target.hash){
+    // плавный скролл
+    blockSections.forEach((item) => {
+      if (`#${item.id}` === target.hash) {
         scrollTo(item);
       }
     });
 
-// открытие полного списка услуг и цен
-      if (target.closest(".link-list")) {
-        e.preventDefault();
-        popupRepairTypes.style.visibility = "visible";
-      }
-
-
+    // открытие полного списка услуг и цен
+    if (target.closest(".link-list")) {
+      e.preventDefault();
+      popupRepairTypes.style.visibility = "visible";
+    }
   });
 };
 
 toggleMenu();
+
+const feedback = () => {
+  const feedbackPhone = document.querySelectorAll("[name='phone']");
+
+  feedbackPhone.forEach((e) => {
+    maskPhone(e)
+  });
+};
+
+feedback();
